@@ -1,5 +1,5 @@
 <script type="text/javascript">
-  $(document).ready(function() {
+  var loadUsers = function() {
     $.ajax({
       type: "GET",
       url: "/users",
@@ -14,11 +14,13 @@
         }
       }
     })
-  })
+  }
+
+  $(document).on('page:load ready', loadUsers);
 </script>
 
 <form>
-<input id="ftx" type="text" onkeyup="filterUsers()" placeholder="Search By User">
+  <input id="filter" type="text" onkeyup="filterUsers()" placeholder="Filter by Name">
 </form>
 
 <div class="row">

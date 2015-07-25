@@ -14,6 +14,6 @@ root.getUser = (id) ->
 		$("#user_data").append "<tr><td>" + json.phone + "</td></tr>"
 
 root.filterUsers = () ->
-	ftx = $("#ftx").val()
-	$("tr:contains('" + ftx + "')").show()
-	$("tr:not(:contains('" + ftx + "'))").hide()
+	filter_text = $("#filter").val()
+	$("#all_users tr:contains('" + filter_text + "')").show()
+	$("#all_users tr:not(:contains('" + filter_text + "'))").hide()
